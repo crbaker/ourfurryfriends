@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:100;300;400');
+
+body{
+    font-family: 'Lato', sans-serif;
+}
+
+.header-jumbo {
+    background-color:#FFFFFF;
+    margin-bottom: 0px;
+}
+
+.footer-jumbo {
+    background-color:#D6D6D6;
+    margin-bottom: 0px;
+}
+
+.header-image {
+    height:400px;
+    margin-top: 40px;
+}
+
+.header-logo {
+    width:50%;
+    margin-bottom: 40px;
+}
+
+.footer-logo {
+    width: 300px;
+}
+
+.center {
+    margin:0 auto;
+    width: 80%;
+}
+
+.menu {
+    background-color: #d4d4d4;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+.menu li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.menu li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 13pt;
+    font-weight:300;
+    transition: color 0.2s ease
+}
+
+.menu li a:hover {
+    color: #F5F5F5;
+}
+
+.centered-header {
+    text-align: center;
+    font-weight:100;
+    text-transform: uppercase;
+    font-size: 36pt;
+}
+ 
+.offered-services {
+    margin-bottom: 20px;
+}
+
+.service {
+    margin-bottom: 40px;
+}
+
+.service-image {
+    height:500px;
+}
+
+.service-caption {
+    font-size: 18pt;
+    font-weight:300;
+}
+
+.service-description {
+    font-size: 16pt;
+    font-weight:100;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.light-header {
+    font-size: 18pt;
+    font-weight:300;
+}
+
+ul.terms {
+    font-size: 12pt;
+    padding-left: 0px;
+}
+
+ul.terms li {
+    margin-bottom: 10px;
+}
+
+.amount {
+    color: #377BB5;
+    font-weight: bold;
+}
+
+.fees-image {
+    height: 200px;
+}
