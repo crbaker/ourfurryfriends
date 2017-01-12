@@ -19,11 +19,12 @@ $(function() {
     var name = $("#name").val();
     var email = $("#email").val();
     var phone = $("#phone").val();
-    var date = $("#date").val();
+    var fromDate = $("#fromDate").val();
+    var toDate = $("#toDate").val();
     var address = $("#address").val();
     var details = $("#details").val();
 
-    var data = {name: name, email: email, phone: phone, address: address, details: details};
+    var data = {name: name, email: email, phone: phone, address: address, details: details, fromDate: fromDate, toDate: toDate};
 
     $.ajax({
       type: "POST",
