@@ -53,10 +53,10 @@ func sendMail(newBooking serviceBooking) {
 func buildEmailBody(newBooking serviceBooking) string {
 	d := "<h1>Service Request</h1>"
 
-	d += "From: " + newBooking.name + "</br>"
-	d += "Email: " + newBooking.email + "</br>"
-	d += "Address: " + newBooking.address + "</br>"
-	d += "details: " + newBooking.details + "</br>"
+	d += "<p><b>From</b>: " + newBooking.name + "</p>"
+	d += "<p><b>Email</b>: " + newBooking.email + "</p>"
+	d += "<p><b>Address</b>: " + newBooking.address + "</p>"
+	d += "<p><b>details</b>: " + newBooking.details + "</p>"
 
 	return d
 }
