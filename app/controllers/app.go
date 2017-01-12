@@ -1,6 +1,8 @@
 package controllers
 
 import (
+	"crypto/tls"
+
 	"github.com/revel/revel"
 	gomail "gopkg.in/gomail.v2"
 )
@@ -40,6 +42,7 @@ func sendMail(newBooking serviceBooking) {
 	m.SetBody("text/html", buildEmailBody(newBooking))
 
 	d := gomail.NewDialer("127.0.0.1", 25, "", "")
+	d.TLSConfig = &tls.Config{InsecureSkipVerify: true}
 
 	// Send the email to Bob, Cora and Dan.
 	if err := d.DialAndSend(m); err != nil {
