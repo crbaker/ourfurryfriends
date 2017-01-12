@@ -15,6 +15,7 @@ type serviceBooking struct {
 	name    string
 	phone   string
 	email   string
+	date    string
 	address string
 	details string
 }
@@ -23,9 +24,9 @@ func (c App) Index() revel.Result {
 	return c.Render()
 }
 
-func (c App) BookService(name string, phone string, email string, address string, details string) revel.Result {
+func (c App) BookService(name string, phone string, email string, date string, address string, details string) revel.Result {
 
-	var newBooking = serviceBooking{name: name, phone: phone, email: email, address: address, details: details}
+	var newBooking = serviceBooking{name: name, phone: phone, email: email, date: date, address: address, details: details}
 
 	go sendMail(newBooking)
 
@@ -36,8 +37,7 @@ func sendMail(newBooking serviceBooking) {
 	m := gomail.NewMessage()
 
 	m.SetHeader("From", "info@ourfurryfriends.co.za")
-	// m.SetHeader("To", "emma@ourfurryfriends.co.za")
-	m.SetHeader("To", "crbaker@gmail.com")
+	m.SetHeader("To", "emma@ourfurryfriends.co.za")
 	m.SetHeader("Subject", "New Booking Request - "+newBooking.name)
 	m.SetBody("text/html", buildEmailBody(newBooking))
 
@@ -53,7 +53,9 @@ func buildEmailBody(newBooking serviceBooking) string {
 	d := "<h1>Service Request</h1>"
 
 	d += "<p><b>From</b>: " + newBooking.name + "</p>"
+	d += "<p><b>Phone</b>: " + newBooking.phone + "</p>"
 	d += "<p><b>Email</b>: " + newBooking.email + "</p>"
+	d += "<p><b>Date</b>: " + newBooking.date + "</p>"
 	d += "<p><b>Address</b>: " + newBooking.address + "</p>"
 	d += "<p><b>details</b>: " + newBooking.details + "</p>"
 

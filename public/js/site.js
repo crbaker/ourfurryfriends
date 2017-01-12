@@ -19,6 +19,7 @@ $(function() {
     var name = $("#name").val();
     var email = $("#email").val();
     var phone = $("#phone").val();
+    var date = $("#date").val();
     var address = $("#address").val();
     var details = $("#details").val();
 
@@ -42,4 +43,8 @@ $(function() {
 
     return false;
   });
+});
+
+$(function() {
+  $( "#date" ).datepicker({dateFormat: "yy-mm-dd"});
 });
