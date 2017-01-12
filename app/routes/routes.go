@@ -19,6 +19,7 @@ func (_ tApp) BookService(
 		name string,
 		phone string,
 		email string,
+		date string,
 		address string,
 		details string,
 		) string {
@@ -27,6 +28,7 @@ func (_ tApp) BookService(
 	revel.Unbind(args, "name", name)
 	revel.Unbind(args, "phone", phone)
 	revel.Unbind(args, "email", email)
+	revel.Unbind(args, "date", date)
 	revel.Unbind(args, "address", address)
 	revel.Unbind(args, "details", details)
 	return revel.MainRouter.Reverse("App.BookService", args).Url
