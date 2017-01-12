@@ -12,3 +12,34 @@ $(function() {
     }
   });
 });
+
+$(function() {
+  $('#bookService').submit(function() {
+
+    var name = $("#name").val();
+    var email = $("#email").val();
+    var phone = $("#phone").val();
+    var address = $("#address").val();
+    var details = $("#details").val();
+
+    var data = {name: name, email: email, phone: phone, address: address, details: details};
+
+    $.ajax({
+      type: "POST",
+      url: '/App/BookService',
+      data: data,
+      success: function(data, textStatus, jqXHR){
+        $("#bookSuccess").show();
+        $("#bookError").hide();
+
+        $('#bookService')[0].reset();
+      },
+      error: function(jqXHR, textStatus, errorThrown){
+        $("#bookSuccess").hide();
+        $("#bookError").show();
+      }
+    });
+
+    return false;
+  });
+});
