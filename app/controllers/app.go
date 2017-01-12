@@ -27,7 +27,7 @@ func (c App) BookService(name string, phone string, email string, address string
 
 	var newBooking = serviceBooking{name: name, phone: phone, email: email, address: address, details: details}
 
-	sendMail(newBooking)
+	go sendMail(newBooking)
 
 	return c.Render()
 }
@@ -35,16 +35,15 @@ func (c App) BookService(name string, phone string, email string, address string
 func sendMail(newBooking serviceBooking) {
 	m := gomail.NewMessage()
 
-	m.SetHeader("From", newBooking.email)
+	m.SetHeader("From", "info@ourfurryfriends.co.za")
 	// m.SetHeader("To", "emma@ourfurryfriends.co.za")
 	m.SetHeader("To", "crbaker@gmail.com")
-	m.SetHeader("Subject", "New Booking Request - ")
+	m.SetHeader("Subject", "New Booking Request - "+newBooking.name)
 	m.SetBody("text/html", buildEmailBody(newBooking))
 
 	d := gomail.NewDialer("127.0.0.1", 25, "", "")
 	d.TLSConfig = &tls.Config{InsecureSkipVerify: true}
 
-	// Send the email to Bob, Cora and Dan.
 	if err := d.DialAndSend(m); err != nil {
 		panic(err)
 	}
