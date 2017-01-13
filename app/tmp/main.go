@@ -36,7 +36,7 @@ func main() {
 				Args: []*revel.MethodArg{ 
 				},
 				RenderArgNames: map[int][]string{ 
-					24: []string{ 
+					28: []string{ 
 					},
 				},
 			},
@@ -46,12 +46,16 @@ func main() {
 					&revel.MethodArg{Name: "name", Type: reflect.TypeOf((*string)(nil)) },
 					&revel.MethodArg{Name: "phone", Type: reflect.TypeOf((*string)(nil)) },
 					&revel.MethodArg{Name: "email", Type: reflect.TypeOf((*string)(nil)) },
-					&revel.MethodArg{Name: "date", Type: reflect.TypeOf((*string)(nil)) },
+					&revel.MethodArg{Name: "fromDate", Type: reflect.TypeOf((*string)(nil)) },
+					&revel.MethodArg{Name: "toDate", Type: reflect.TypeOf((*string)(nil)) },
 					&revel.MethodArg{Name: "address", Type: reflect.TypeOf((*string)(nil)) },
 					&revel.MethodArg{Name: "details", Type: reflect.TypeOf((*string)(nil)) },
+					&revel.MethodArg{Name: "recaptchaResponse", Type: reflect.TypeOf((*string)(nil)) },
 				},
 				RenderArgNames: map[int][]string{ 
-					33: []string{ 
+					47: []string{ 
+					},
+					51: []string{ 
 					},
 				},
 			},

@@ -23,8 +23,9 @@ $(function() {
     var toDate = $("#toDate").val();
     var address = $("#address").val();
     var details = $("#details").val();
-
-    var data = {name: name, email: email, phone: phone, address: address, details: details, fromDate: fromDate, toDate: toDate};
+    var recaptchaResponse = grecaptcha.getResponse();
+    
+    var data = {name: name, email: email, phone: phone, address: address, details: details, fromDate: fromDate, toDate: toDate, recaptchaResponse: recaptchaResponse};
 
     $.ajax({
       type: "POST",
@@ -37,6 +38,13 @@ $(function() {
         $('#bookService')[0].reset();
       },
       error: function(jqXHR, textStatus, errorThrown){
+        if (jqXHR.status === 400){
+          $("#errorMessage").html("You must verify you are human by ticking the I'm not a robot checkbox");
+        }
+        else{
+          $("#errorMessage").html("We were unable to receive your details at this time. Please try again or give us a call.");
+        }
+
         $("#bookSuccess").hide();
         $("#bookError").show();
       }

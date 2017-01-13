@@ -19,18 +19,22 @@ func (_ tApp) BookService(
 		name string,
 		phone string,
 		email string,
-		date string,
+		fromDate string,
+		toDate string,
 		address string,
 		details string,
+		recaptchaResponse string,
 		) string {
 	args := make(map[string]string)
 	
 	revel.Unbind(args, "name", name)
 	revel.Unbind(args, "phone", phone)
 	revel.Unbind(args, "email", email)
-	revel.Unbind(args, "date", date)
+	revel.Unbind(args, "fromDate", fromDate)
+	revel.Unbind(args, "toDate", toDate)
 	revel.Unbind(args, "address", address)
 	revel.Unbind(args, "details", details)
+	revel.Unbind(args, "recaptchaResponse", recaptchaResponse)
 	return revel.MainRouter.Reverse("App.BookService", args).Url
 }
 
