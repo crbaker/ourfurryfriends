@@ -10,7 +10,7 @@ body{
 }
 
 .footer-jumbo {
-    background-color:#D6D6D6;
+    background-color:#C4D7DF;
     margin-bottom: 0px;
 }
 
@@ -34,7 +34,8 @@ body{
 }
 
 .menu {
-    background-color: #d4d4d4;
+    background-color: #C4D7DF;
+    /*background-color: #d4d4d4;*/
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -101,7 +102,7 @@ body{
 }
 
 .light-header {
-    font-size: 18pt;
+    font-size: 16pt;
     font-weight:300;
 }
 
