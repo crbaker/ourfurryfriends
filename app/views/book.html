@@ -4,69 +4,76 @@
     </div>
 
     <div class="row">
-      <p class="light-header">Call or email us and let us know how we can help you.</p>
-      <p><img style="height:37px; width: 20px; margin-right: 10px;" src="/public/img/phone-icon.png"/>082 874 8928</p>
-      <p><img style="height:19px;width: 20; margin-right: 10px;" src="/public/img/email-icon.png"/><a href="mailto:emma.bronwyn09@gmail.com">emma.bronwyn09@gmail.com</a></p>
+        <div class="col-xs-12 col-md-12">
+            <p class="light-header">Call or email us and let us know how we can help you.</p>
+            <p><img style="height:37px; width: 20px; margin-right: 10px;" src="/public/img/phone-icon.png"/>082 874 8928</p>
+            <p><img style="height:19px;width: 20; margin-right: 10px;" src="/public/img/email-icon.png"/><a href="mailto:emma.bronwyn09@gmail.com">emma.bronwyn09@gmail.com</a></p>
+        </div>
     </div>
 
     <div class="row">
-      <p class="light-header">Or complete this form and we will call you back with a quote…</p>
+        <div class="col-xs-12 col-md-12">
+            <p class="light-header">Or complete this form and we will call you back with a quote…</p>
+        </div>
     </div>
     
 
     <div class="row">
-        <form id="bookService">
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Name" name="name" required>
-        </div>
-        <div class="form-group">
-            <label for="phone">Phone</label>
-            <input type="text" class="form-control" id="phone" placeholder="Phone" name="phone" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Email" name="email" required>
-        </div>
+        <div class="col-xs-12 col-md-12">
+            <form id="bookService">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="text" class="form-control" id="phone" placeholder="Phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Email" name="email" required>
+            </div>
 
-        <div class="row">
-            <div class="col-xs-6 col-md-6">
-                <div class="form-group">
-                    <label for="fromDate">Date From</label>
-                    <input type="text" class="form-control date" id="fromDate" placeholder="From Date" name="fromDate" required>
+            <div class="row">
+                <div class="col-xs-6 col-md-6">
+                    <div class="form-group">
+                        <label for="fromDate">Date From</label>
+                        <input type="text" class="form-control date" id="fromDate" placeholder="From Date" name="fromDate" required>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-md-6">
+                    <div class="form-group">
+                        <label for="toDate">Date To</label>
+                        <input type="text" class="form-control date" id="toDate" placeholder="To Date" name="toDate" required>
+                    </div>
                 </div>
             </div>
-            <div class="col-xs-6 col-md-6">
-                <div class="form-group">
-                    <label for="toDate">Date To</label>
-                    <input type="text" class="form-control date" id="toDate" placeholder="To Date" name="toDate" required>
-                </div>
+
+            <div class="form-group">
+                <label for="address">Address</label>
+                <select class="form-control" id="address" name="address">
+                    <option>Lonehill</option>
+                    <option>Beverley</option>
+                    <option>Fourways</option>
+                </select>
             </div>
+            <div class="form-group">
+                <label for="email">Details of service</label>
+                <textarea type="email" class="form-control" id="details" placeholder="Details" rows="5" name="details" required></textarea>
+            </div>
+
+            <div style="margin-bottom: 10px;" class="g-recaptcha" data-sitekey="6LeSnxEUAAAAAK-OnE_uT58mrddE4Fa4R4AE4p5B"></div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <div style="margin-top: 20px;display: none" id="bookSuccess">
+                <div class="alert alert-success" role="alert">Thank you - We have received your details and will get back to you as soon as possible.</div>
+            </div>
+            <div style="margin-top: 20px;display: none" id="bookError">
+                <div class="alert alert-danger" role="alert" id="errorMessage"></div>
+            </div>
+            </form>
         </div>
 
-        <div class="form-group">
-            <label for="address">Address</label>
-            <select class="form-control" id="address" name="address">
-                <option>Lonehill</option>
-                <option>Beverley</option>
-                <option>Fourways</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="email">Details of service</label>
-            <textarea type="email" class="form-control" id="details" placeholder="Details" rows="5" name="details" required></textarea>
-        </div>
-
-        <div style="margin-bottom: 10px;" class="g-recaptcha" data-sitekey="6LeSnxEUAAAAAK-OnE_uT58mrddE4Fa4R4AE4p5B"></div>
-
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <div style="margin-top: 20px;display: none" id="bookSuccess">
-            <div class="alert alert-success" role="alert">Thank you - We have received your details and will get back to you as soon as possible.</div>
-        </div>
-        <div style="margin-top: 20px;display: none" id="bookError">
-            <div class="alert alert-danger" role="alert" id="errorMessage"></div>
-        </div>
-        </form>
     </div>
 
 </div>
